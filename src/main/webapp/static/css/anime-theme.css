@@ -1,0 +1,194 @@
+/* 二次元风格主题 */
+
+:root {
+  --primary-color: #ff7edb;
+  --secondary-color: #7e82ff;
+  --accent-color: #4cfeac;
+  --background-color: #2a2a46;
+  --text-color: #ffffff;
+  --sidebar-color: rgba(26, 26, 46, 0.95);
+  --card-bg: rgba(40, 41, 76, 0.8);
+  --hover-color: #ff7edb;
+  --border-color: #7e82ff;
+}
+
+body {
+  background-color: var(--background-color);
+  background-image: url("../img/anime-bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: var(--text-color);
+  font-family: 'Nunito', sans-serif;
+}
+
+/* 卡片样式 */
+.xe-widget {
+  background-color: var(--card-bg) !important;
+  border-radius: 12px !important;
+  border: 2px solid transparent !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease !important;
+}
+
+.xe-widget:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* 侧边栏样式 */
+.sidebar-menu {
+  background-color: var(--sidebar-color) !important;
+  backdrop-filter: blur(10px);
+}
+
+.sidebar-menu .logo-env {
+  background-color: transparent !important;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.sidebar-menu .main-menu a {
+  color: var(--text-color) !important;
+  transition: all 0.3s ease;
+}
+
+.sidebar-menu .main-menu a:hover {
+  background-color: rgba(255, 126, 219, 0.2) !important;
+  color: var(--primary-color) !important;
+}
+
+.sidebar-menu .main-menu li.active > a {
+  background-color: rgba(255, 126, 219, 0.3) !important;
+  color: var(--primary-color) !important;
+  border-left: 3px solid var(--primary-color);
+}
+
+/* 搜索框样式 */
+.search-input {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 2px solid var(--accent-color) !important;
+  border-radius: 25px !important;
+  color: var(--text-color) !important;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 15px var(--accent-color) !important;
+}
+
+/* 按钮样式 */
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+}
+
+/* 标签样式 */
+.label {
+  border-radius: 12px !important;
+  padding: 5px 10px !important;
+}
+
+/* 导航菜单 */
+.navbar {
+  background-color: transparent !important;
+}
+
+.navbar .navbar-brand {
+  color: var(--primary-color) !important;
+}
+
+/* 主内容区 */
+.main-content {
+  background-color: transparent !important;
+}
+
+/* 页脚 */
+.main-footer {
+  background-color: rgba(26, 26, 46, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-top: 2px solid var(--accent-color);
+}
+
+/* 动画效果 */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animated-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* 网站标题 */
+.title-text {
+  font-weight: 700;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 卡片内图标 */
+.xe-widget .xe-icon i {
+  color: var(--primary-color) !important;
+  transition: all 0.3s ease;
+}
+
+.xe-widget:hover .xe-icon i {
+  transform: scale(1.2) rotate(5deg);
+  color: var(--accent-color) !important;
+}
+
+/* 搜索引擎选择器 */
+.s-type-list label {
+  background: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease;
+}
+
+.s-type-list label:hover {
+  background: rgba(255, 126, 219, 0.2) !important;
+  transform: translateY(-3px);
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(26, 26, 46, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+/* 鼠标指针样式 */
+body {
+  cursor: url('../img/cursor.png'), auto;
+}
+
+a, button, .btn, input[type="submit"] {
+  cursor: url('../img/cursor-pointer.png'), pointer !important;
+} 

@@ -4,22 +4,36 @@
             <!-- logo -->
             <div class="logo">
                 <a href="/" class="logo-expanded">
-                    <img src="/img/logo2x11.png" width="100%" alt="" />
+                    <img src="${ctxPath}/static/img/logo2x22.png" width="100%" alt="" />
                 </a>
                 <a href="/" class="logo-collapsed">
-                    <img src="/static/img/logo-collapsed2x.png" width="40" alt="" />
+                    <img src="${ctxPath}/static/img/logo-collapsed2x.png" width="40" alt="" />
                 </a>
             </div>
             <div class="mobile-menu-toggle visible-xs">
-                <a href="#" data-toggle="user-info-menu">
-                    <i class="linecons-cog"></i>
-                </a>
                 <a href="#" data-toggle="mobile-menu">
                     <i class="fa-bars"></i>
                 </a>
             </div>
         </header>
         <ul id="main-menu" class="main-menu">
+            <!--登陆用户可见-->
+            @if(tool.isEmpty(session.user)){
+            <!--<li>-->
+                <!--<a href="${ctxPath}/login" class="smooth">-->
+                    <!--<i class="linecons-key"></i>-->
+                    <!--<span class="title">登录/注册</span>-->
+                <!--</a>-->
+            <!--</li>-->
+            @}
+            @if(!tool.isEmpty(session.user)){
+            <li>
+                <a href="#" style="position: relative;color:white!important;" onclick="clearCache()" class="smooth">
+                    <i class="linecons-user"></i>
+                    <span class="title">欢迎</span>${session.user.name!}
+                </a>
+            </li>
+            @}
             @for(title in titles){
                 @if(tool.isEmpty(title.children)){
                 <li>

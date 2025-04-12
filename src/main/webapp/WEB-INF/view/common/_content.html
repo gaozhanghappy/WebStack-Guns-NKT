@@ -1,6 +1,6 @@
 @for(categorySite in categorySiteList){
     @if(isNotEmpty(categorySite.sites)){
-    <h4   class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="${categorySite.title}"></i>${categorySite.title}</h4>
+    <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="${categorySite.title}"></i>${categorySite.title}</h4>
         <div class="row">
             @for(site in categorySite.sites){
             <div class="col-sm-3">

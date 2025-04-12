@@ -1,0 +1,184 @@
+/* 预加载样式 */
+.xe-widget.xe-conversations {
+    transition: opacity 0.3s ease;
+}
+
+.xe-widget.xe-conversations.loading {
+    opacity: 0.6;
+}
+
+.xe-widget.xe-conversations.loaded {
+    opacity: 1;
+}
+
+/* 页面容器布局调整 */
+.page-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* 固定侧边栏，确保滚动时可见 */
+.sidebar-menu.fixed {
+    position: fixed;
+    height: 100%;
+    z-index: 100;
+    width: 280px;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+.sidebar-menu.fixed .sidebar-menu-inner {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* 主内容区域调整 */
+.main-content {
+    flex: 1;
+    margin-left: 280px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100vh;
+    width: calc(100% - 280px);
+    position: relative;
+}
+
+/* 内容包装器样式 */
+.content-wrapper {
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 顶部导航区域调整 */
+.navbar.user-info-navbar {
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+/* 搜索框区域样式 */
+.s-search {
+    padding: 20px;
+    margin-top: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 适配折叠边栏模式 */
+.sidebar-menu.collapsed + .main-content {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+}
+
+.sidebar-menu-inner::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar-menu-inner::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.sidebar-menu-inner::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* 添加滚动菜单激活状态的样式 */
+#main-menu li.active > a {
+    background-color: rgba(69, 74, 84, 0.3);
+    color: #fff !important;
+    font-weight: bold;
+}
+
+#main-menu li.active {
+    background-color: rgba(69, 74, 84, 0.2);
+}
+
+#main-menu li ul li.active {
+    background-color: rgba(69, 74, 84, 0.3);
+}
+
+/* 滚动指示器样式 */
+.scroll-indicator {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scroll-indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 5px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scroll-indicator-dot.active {
+    background-color: #fff;
+    transform: scale(1.2);
+}
+
+/* 懒加载图片占位符样式 */
+.img-placeholder {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+/* 图片加载中动画 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .scroll-indicator {
+        display: none;
+    }
+    
+    .sidebar-menu.fixed {
+        position: absolute;
+        height: auto;
+        width: 100%;
+        z-index: 999;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .sidebar-menu.collapsed + .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    /* 移动端菜单可见时的内容区域 */
+    .sidebar-menu.mobile-is-visible + .main-content {
+        opacity: 0.3;
+        pointer-events: none;
+    }
+    
+    .content-wrapper {
+        padding: 0 10px;
+    }
+} 
