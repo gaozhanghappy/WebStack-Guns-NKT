@@ -1,7 +1,5 @@
 package com.nikati.manage.modular.system.VO;
 
-import lombok.Data;
-
 import java.io.Serializable;
 
 /**
@@ -9,7 +7,6 @@ import java.io.Serializable;
  * @Date 2019-07-22 14:17
  * 
  */
-@Data
 public class ResultVO<T> implements Serializable {
 
     private static final long serialVersionUID = 3236329195874147801L;
@@ -21,4 +18,28 @@ public class ResultVO<T> implements Serializable {
 
     /** 具体内容. */
     private T data;
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
 }

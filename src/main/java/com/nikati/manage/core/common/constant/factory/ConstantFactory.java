@@ -348,5 +348,4 @@ public class ConstantFactory implements IConstantFactory {
         return parentDeptIds;
     }
 
-
 }

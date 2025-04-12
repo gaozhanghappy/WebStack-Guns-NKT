@@ -3345,6 +3345,7 @@ body {
     font-size: 13px;
     color: #676a6c;
     overflow-x: hidden;
+    background-color: #ffffff !important;
 }
 
 html,
@@ -7105,6 +7106,20 @@ body.rtls.top-navigation .footer.fixed {
     .rtls.fixed-sidebar.body-small.mini-navbar .navbar-static-side {
         display: block;
     }
+    .ibox-tools {
+        float: none;
+        text-align: right;
+        display: block;
+    }
+    .content-tabs {
+        display: none;
+    }
+    #content-main {
+        height: calc(100% - 100px);
+    }
+    .fixed-nav #content-main {
+        height: calc(100% - 38px);
+    }
 }
 
 .rtls .ltr-support {
@@ -7899,4 +7914,20 @@ body.skin-3 {
 .tab-menu-selected {
     background-color: #293846 !important;
     color: white !important;
+}
+
+.boxed-container {
+    background: #ffffff !important;
+}
+
+.page-container .main-content {
+    background-color: #ffffff !important;
+}
+
+.page-container .main-content .page-title {
+    background: #ffffff !important;
+}
+
+.logo-env {
+    background-color: #ffffff !important;
 }
